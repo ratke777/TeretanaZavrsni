@@ -1,0 +1,2 @@
+# TeretanaZavrsni
+Aplikacija za teretanu
