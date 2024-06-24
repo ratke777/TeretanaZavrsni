@@ -1,0 +1,3 @@
+Prvo sto radim, npx create-react-app frontend.Kreiram react folder.
+u Srcu kreiram folder sa stranicama.
+Zatim yarn add react-router-dom.Ako je /register idi na register.Sad cemo isto to da koristim da navbar bude na svakoj strani.Koristeci funkciju outlet

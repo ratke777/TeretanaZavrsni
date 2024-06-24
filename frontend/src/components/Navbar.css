@@ -1,0 +1,74 @@
+
+.sidebar{
+    border-top:1px solid white;
+    margin-top: 10vh;
+    width:240px;
+    background-color: #4e44d0;
+    position: absolute;
+    height: 90vh;
+    padding:  15px 30px;
+    transition: all 1s;
+    left: -100%;
+    overflow: hidden;
+}
+.sidebar.active{
+    left: 0;
+}
+
+ul{
+    padding: 0px;
+
+}
+li{
+    color:white;
+}
+ul li {
+    margin:10px 0;
+    list-style-type: none;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: white;
+}
+ul li  a:hover,
+ul li  a.active{
+    background:white;
+    color: #4e44d0;
+    transition: all 0.5s;
+}
+ul li a svg{
+    margin-right: 10px;
+}
+.logout{
+    font-size:16px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    color:white;
+    
+    background-color: transparent;
+    
+    
+}
+.logout svg{
+    margin-right: 10px;
+}
+.logout:hover{
+    background:white;
+    color: #4e44d0;
+    transition: all 0.5s;
+}
+.ime{
+    color:white;
+    border-bottom: 1px solid white;
+
+}
+.ime svg{
+    margin-right: 10px;
+    
+}

@@ -1,0 +1,40 @@
+.hamb:hover{
+    cursor: pointer;
+    
+}
+.header{
+    width: 100vw;
+    height: 10vh;
+    background-color:#4e44d0 ;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    
+
+}
+
+.prvi , .drugi , .treci {
+    display: flex;
+    flex:1;
+    align-items: center;
+    justify-content: center;
+    width: 33vw;
+    height: 10vh;
+    color:white;
+
+}
+.prvi{
+
+    padding-left: 3vw;
+    justify-content: left;
+
+}
+img{
+    width: 60px;
+   
+    background-size:cover;
+    background-position: center;
+
+
+}
+
