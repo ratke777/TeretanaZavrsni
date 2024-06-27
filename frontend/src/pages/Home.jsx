@@ -52,7 +52,7 @@ const Home = () => {
         {currentPosts.map((post) => (
           <div className="blok" key={post.id_bloga}>
             <div className="divSlika">
-              <img className="slikaBlog" src={post.slika} alt="" />
+              <img className="slikaBlog" src={`/upload/${post.slika}`} alt="" />
             </div>
             <div className="Opis">
               <div className="tekst">

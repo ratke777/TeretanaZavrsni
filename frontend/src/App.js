@@ -17,6 +17,9 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import ProtectiveRoutes from './context/ProtectiveRoutes';
 import AdminBlog from './pages/AdminBlog';
+import ProtectiveRoutesAdmin from './context/ProtectiveRoutesAdmin';
+import AdminKartica from './pages/AdminKartica';
+import Trening from './pages/Trening';
 const Layout = ()=>{
   return (
     <>
@@ -50,9 +53,29 @@ const router = createBrowserRouter([
   {
     path:"/dodaj",
     element:
-    <ProtectiveRoutes>
+    <ProtectiveRoutesAdmin>
+    
       <AdminBlog/>
-    </ProtectiveRoutes>
+    
+    </ProtectiveRoutesAdmin>
+  },
+  {
+    path:"/korisnici",
+    element:
+    <ProtectiveRoutesAdmin>
+    
+      <AdminKartica/>
+    
+    </ProtectiveRoutesAdmin>
+  },
+  {
+    path:"/trening",
+    element:
+    <ProtectiveRoutesAdmin>
+    
+      <Trening/>
+    
+    </ProtectiveRoutesAdmin>
   },
  
   

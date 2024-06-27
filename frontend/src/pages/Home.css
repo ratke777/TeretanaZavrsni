@@ -31,7 +31,7 @@
 .blok{
     border-radius: 10px;
     border: 1px solid #4e44d0;
-    max-width: 30%;
+    width: 350px;
     height: auto;
     
    
@@ -156,7 +156,7 @@ h2{
     .blok{
         border-radius: 10px;
         border: 1px solid #4e44d0;
-        max-width: 45%;
+        width: 250px;
         height: auto;
         box-sizing: border-box;
        
@@ -281,7 +281,7 @@ h2{
         .blok{
             border-radius: 10px;
             border: 1px solid #4e44d0;
-            max-width: 60%;
+            width: 250px;
             height: auto;
             box-sizing: border-box;
            
@@ -411,7 +411,7 @@ h2{
             .blok{
                 border-radius: 10px;
                 border: 1px solid #4e44d0;
-                max-width: 80%;
+                max-width: 200px;
                 height: auto;
                 box-sizing: border-box;
                

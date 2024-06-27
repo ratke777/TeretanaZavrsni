@@ -8,6 +8,9 @@ import { GrContact } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { CiLogout } from "react-icons/ci";
 import { AuthContext } from '../context/authContext';
+import { CiSquarePlus } from "react-icons/ci";
+import { FaUsers } from "react-icons/fa";
+import { MdSportsGymnastics } from "react-icons/md";
 
 const Navbar = ({ showNav }) => {
   const {currentUser,logout} = useContext(AuthContext)
@@ -37,10 +40,32 @@ const Navbar = ({ showNav }) => {
         <li>
           <a href="/kontakt"><GrContact/>Kontakt </a>
         </li>
-        <li>
+        
+       
+        {currentUser && currentUser.id === 4 && (
+            <li>
+              <a href="/dodaj">
+               <CiSquarePlus/>Dodaj Blog
+              </a>
+            </li>
+          )}
+                  {currentUser && currentUser.id === 4 && (
+            <li>
+              <a href="/korisnici">
+              <FaUsers />Svi clanovi
+              </a>
+            </li>
+          )}
+           {currentUser && currentUser.id === 4 && (
+            <li>
+              <a href="/trening">
+              <MdSportsGymnastics />Svi treninzi
+              </a>
+            </li>
+          )}
+           <li>
         <button className='logout' onClick={logout}><CiLogout/>Log out</button>
         </li>
-
     </ul>
    
    </div>

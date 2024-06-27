@@ -36,6 +36,29 @@
     
     
 }
+.deleteBtn{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.deleteBtn:hover{
+    border: 1px solid red;
+    color: red;
+    transition: all 0.3s;
+}
+.editBtn{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-decoration: none;
+    color:black;
+}
+.editBtn:hover{
+    border: 1px solid green;
+    border-radius: 10px;
+    transition: all 0.3s;
+    text-decoration: none;
+
+}
 .admin2{
     margin-top: 30px;
     display: flex;
@@ -113,3 +136,4 @@
         padding: 0px 5vh;
     }
     }
+

@@ -25,3 +25,19 @@ export const rezervacije = (req,res)=>{
       return res.status(200).json(data)
   })
 }
+
+export const korisnici = (req,res)=>{
+     const q = "Select u.id, u.ime,u.prezime,u.broj_kartice,c.clanarinaOd,c.clanarinaDo\
+                from users u\
+                JOIN clanarina c ON c.broj_kartice=u.broj_kartice\
+                where u.id!= 4\
+                "    
+    db.query(q,[],(err,data)=>{
+        if (err) return res.json(err);
+        return res.status(200).json(data)
+    })
+     
+    
+
+
+}
