@@ -1,0 +1,115 @@
+@media (width>600px) {
+    
+.blog2{
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    align-items: top;
+   
+}
+.naslovBloga2{
+    text-align: center;
+    font-weight: bold;
+   
+}
+.cijeli2{
+    padding: 8vh 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+}
+.content2{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    
+    
+}
+.slikaBlog2{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+   
+    
+    
+}
+.admin2{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 100px;
+    margin-bottom: 30px;
+}
+.glavna2{
+    width: 400px;
+    height: 300px;
+    display: inline;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 4px 9px 19px #4e44d0;
+}
+
+}
+@media (width<=600px) {
+    
+    .blog2{
+        display: flex;
+        width: 100vw;
+        min-height: 100vh;
+        align-items: top;
+       
+    }
+    .naslovBloga2{
+        text-align: center;
+        font-weight: bold;
+       
+    }
+    .cijeli2{
+        padding: 2vh 0vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: top;
+    }
+    .content2{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        
+        
+    }
+    .slikaBlog2{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+       
+        
+        
+    }
+    .admin2{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 100px;
+        margin-bottom: 30px;
+    }
+    .glavna2{
+        width: 100vw;
+        height: 300px;
+        overflow: hidden;
+        display: inline;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 4px 9px 19px #4e44d0;
+    }
+    .tekst2{
+        padding: 0px 5vh;
+    }
+    }

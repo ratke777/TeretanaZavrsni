@@ -1,0 +1,80 @@
+@media (width>450px) {
+    
+
+.rezervacije{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    width: 100vw;
+    min-height: 100vh;
+}
+.rezerv{
+    width: 80%;
+    
+}
+.rez{
+    width:auto;
+}
+td{
+    padding: 10px;
+}
+.otkazi{
+    padding: 9px 11px;
+    border-radius: 10px;
+    color: white;
+    background-color: #4e44d0;
+    border: 1px solid transparent;
+
+}
+.otkazi:hover{
+    background-color: white;
+    color: #4e44d0;
+    border: 1px solid #4e44d0;
+    transition: all 0.3s;
+}
+h1{
+    margin-top: 10px;
+}
+}
+@media (max-width:450px) {
+    .rezervacije {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Changed from 'top' to 'flex-start' */
+        width: 100vw;
+        min-height: 100vh;
+        box-sizing: border-box;  
+    }
+    
+      .rezerv {
+        width:300px;
+        box-sizing: border-box;
+        height: auto;
+      }
+    
+      td {
+        padding: 7px;
+        font-size: 12px;
+      }
+    
+      .otkazi {
+        padding: 9px 11px;
+        border-radius: 10px;
+        color: white;
+        background-color: #4e44d0;
+        border: 1px solid transparent;
+      }
+    
+      .otkazi:hover {
+        background-color: white;
+        color: #4e44d0;
+        border: 1px solid #4e44d0;
+        transition: all 0.3s;
+      }
+    
+      h1 {
+        margin-top: 10px;
+      }
+    }

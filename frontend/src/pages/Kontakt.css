@@ -1,0 +1,62 @@
+.contact{
+    width:100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+    justify-content: left;
+    background-color: white;
+    padding: 25px 25px 30px;
+    border-radius: 8px;
+    box-shadow: 9px 16px 20px #4e44d0;
+    margin:25px
+}
+
+.input-box{
+    margin-top: 20px;
+
+}
+.input-box .field{
+    width: 80%;
+    
+    background: transparent;
+    border:2px solid #ddd ;
+    outline:none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    color:#333;
+    margin-top: 8px;
+}
+
+.input-box .field.mess{
+    height: 100px;
+    resize: none;
+}
+form button{
+    width: 50%;
+    padding: 9px 11px;
+    background-color: #4e44d0;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+
+
+}
+form button:hover{
+    color:#4e44d0;
+    background-color: white;
+    border: 1px solid #4e44d0;
+    transition: all 0.3s;
+}
+.naslov{
+    text-align: left;
+}

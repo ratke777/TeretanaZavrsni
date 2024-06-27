@@ -1,7 +1,15 @@
 .registracija
 {width: 50%;
 border-radius: 10px;
-border: none;
+border: 1px solid transparent;
 background-color: #4e44d0;
 color:white;
 padding: 9px 11px;}
+.registracija:hover{
+    background-color: white;
+    border:1px solid #4e44d0;
+    color: #4e44d0;
+    transition: all 0.5s;
+    cursor: pointer;
+    
+}

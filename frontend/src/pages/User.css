@@ -1,0 +1,41 @@
+.Podaci{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+
+
+}
+table{
+    margin-top: 30px;
+    width: 60%;
+    background-color:  #e9e8e8;
+    border: 1px solid #4e44d0;
+    border-radius: 10px;
+    box-shadow: 9px 11px 16px #4e44d0;
+
+}
+th{
+    text-align: left;
+    width: 50%;
+    padding: 10px;
+    
+}
+tr{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin:5px;
+}
+.info{
+    color: #4e44d0;
+}
+tr:hover{
+    background-color: #bebee2;
+    transition: all 0.3s;
+   
+  
+
+}

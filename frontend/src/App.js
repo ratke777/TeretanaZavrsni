@@ -15,7 +15,8 @@ import User from "./pages/User"
 import Write from "./pages/Write"
 import Navbar from './components/Navbar';
 import Header from './components/Header';
-
+import ProtectiveRoutes from './context/ProtectiveRoutes';
+import AdminBlog from './pages/AdminBlog';
 const Layout = ()=>{
   return (
     <>
@@ -41,33 +42,68 @@ const router = createBrowserRouter([
     children:[
   {
     path: "/",
-    element: <Home/>
+    element: 
+    <ProtectiveRoutes>
+    <Home/>
+    </ProtectiveRoutes>
   },
+  {
+    path:"/dodaj",
+    element:
+    <ProtectiveRoutes>
+      <AdminBlog/>
+    </ProtectiveRoutes>
+  },
+ 
   
   {
     path: "/kontakt",
-    element: <Kontakt/>
+    
+    element:
+    <ProtectiveRoutes>
+    <Kontakt/>
+    </ProtectiveRoutes>
   },
  
   {
     path: "/post/:id",
-    element: <Single/>
+    element: 
+    <ProtectiveRoutes>
+    <Single/>
+    </ProtectiveRoutes>
   },
   {
     path: "/rezervacije",
-    element: <Rezervacije/>
+    element: <ProtectiveRoutes>
+    <Rezervacije/>
+    </ProtectiveRoutes>
   },
   {
     path: "/termini",
-    element: <Termini/>
+    element: 
+    <ProtectiveRoutes>
+    <Termini/>
+    </ProtectiveRoutes>
+  },
+  {
+    path: "/posts/:id",
+    element: 
+    <ProtectiveRoutes>
+    <Single/>
+    </ProtectiveRoutes>
   },
   {
     path: "/user",
-    element: <User/>
+    element: 
+    <ProtectiveRoutes>
+    <User/>
+    </ProtectiveRoutes>
   },
   {
     path:"/write",
-    element: <Write/>
+    element:
+    <ProtectiveRoutes> <Write/>
+    </ProtectiveRoutes>
   }
 ]
 }

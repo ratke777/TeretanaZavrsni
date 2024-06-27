@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Navbar.css'
 import { CiUser } from "react-icons/ci";
 import { CiHome } from "react-icons/ci";
@@ -7,13 +7,17 @@ import { CiViewTable } from "react-icons/ci";
 import { GrContact } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { CiLogout } from "react-icons/ci";
+import { AuthContext } from '../context/authContext';
+
 const Navbar = ({ showNav }) => {
+  const {currentUser,logout} = useContext(AuthContext)
+
 
   return (
     
    <div className={`sidebar ${showNav ? 'active' : ''}`}>
      
-      <div className="ime"><FaRegCircleUser />Matija, dobrodosli</div>
+      <div className="ime"><FaRegCircleUser />{currentUser?.ime}, dobrodosli</div>
      
     <ul>
        
@@ -34,7 +38,7 @@ const Navbar = ({ showNav }) => {
           <a href="/kontakt"><GrContact/>Kontakt </a>
         </li>
         <li>
-        <button className='logout'><CiLogout/>Log out</button>
+        <button className='logout' onClick={logout}><CiLogout/>Log out</button>
         </li>
 
     </ul>
