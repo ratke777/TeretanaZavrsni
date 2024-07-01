@@ -34,7 +34,7 @@ export const addTermin = (req, res) => {
   });
 };
 export const treninzi = (req,res)=>{
-  const q = "Select* from trening"
+  const q = "Select* from trening where aktivan = 'da' "
   db.query(q,[],(err,data)=>{
     if(err) return res.json("Greska s bazom")
     return res.status(200).json(data)
@@ -48,8 +48,11 @@ export const delTermin = (req,res)=>{
   })
 }
 export const delTrening = (req,res)=>{
-  const q = "Delete from trening where id_treninga = ?";
+  const q = "UPDATE trening \
+  SET aktivan = 'ne' \
+  where id_treninga = ?";
   db.query(q,[req.params.id],(err,data)=>{
+    console.log(req.params.id)
     if(err) console.error(err)
     return res.status(200).json("Uspjesno obrisan")
   })
@@ -72,4 +75,53 @@ export const addTrening = (req, res) => {
       return res.status(400).json("Neuspješno dodat trening");
     }
   });
+};
+
+export const rezervisi = (req, res) => {
+  const values = [
+      req.body.id_usera,
+      req.body.id_termina
+    
+  ]
+  console.log(values)
+  const q2 = 'SELECT * FROM rezervacije WHERE id_usera = ? AND id_termina = ?';
+  db.query(q2, [req.body.id_usera, req.body.id_termina], (err, data) => {
+
+    if (err) return res.json(err);
+    if (data.length) return res.status(403).json('Korisnik je već zakazao ovaj termin');
+   console.log("nema zakazanih")
+    const q = 'INSERT INTO rezervacije(id_usera, id_termina) VALUES (?, ?)';
+    db.query(q, [req.body.id_usera, req.body.id_termina], (err, data) => {
+      if (err) return res.json(err);
+
+      return res.status(200).json('Zakazano');
+    });
+  });
+};
+
+export const izbrisiRez = (req,res) =>{
+  
+    const id = req.params.id;
+  
+    const q = "DELETE FROM rezervacije where id_rezervacije  = ?"
+
+    db.query(q,[id],(err,data)=>{
+      if(err) return res.json(err)
+      return res.status(200).json("Uspjesno")
+    });
+
+};
+
+export const korisniciTermini = (req,res) =>{
+   
+  const q = "Select u.id,u.ime,u.prezime,t.id_termina from users u\
+     join rezervacije r on r.id_usera = u.id \
+     join termin t ON t.id_termina=r.id_termina";
+
+  db.query(q,[],(err,data)=>{
+     if(err) return res.json(err)
+
+      return res.status(201).json(data)
+  });
+
 };

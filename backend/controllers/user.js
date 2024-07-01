@@ -40,4 +40,38 @@ export const korisnici = (req,res)=>{
     
 
 
-}
+};
+
+export const addUser = (req,res)=>{
+    const q = "INSERT INTO clanarina(broj_kartice,clanarinaOd,clanarinaDo) values (?,?,?)";
+    db.query(q,[req.body.broj,req.body.od,req.body.vaziDo],(err,data)=>{
+        if(err) return res.json(err);
+        return res.status(200).json("Uspjesno dodata nova kartica")
+    });
+};
+export const changeUser = (req,res)=>{
+    const q = "Update clanarina\
+                set clanarinaOd = ?,\
+                clanarinaDo = ?\
+                where broj_kartice = ?";
+    db.query(q,[req.body.od2,req.body.vaziDo2,req.body.broj2],(err,data)=>{
+        if(err) return res.json(err);
+        return res.status(200).json("Uspjesno promijenjena nova kartica")
+    });
+};
+
+export const Infokorisnici = (req,res)=>{
+    const q = "Select u.id, u.ime,u.prezime,u.broj_kartice,c.clanarinaOd,c.clanarinaDo\
+               from users u\
+               JOIN clanarina c ON c.broj_kartice=u.broj_kartice\
+               where u.id = ?\
+               "    
+   db.query(q,[req.params.id],(err,data)=>{
+       if (err) return res.json(err);
+       return res.status(200).json(data)
+   })
+    
+   
+
+
+};

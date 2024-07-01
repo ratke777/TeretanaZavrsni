@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import logo from "../components/forestino.png"
 import "./Register.css"
 import axios from 'axios'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const Register = () => {
   const [err,setError]= useState(null)
   const [inputs,setInputs] = useState({
@@ -14,7 +14,7 @@ const Register = () => {
       password2:""
     
   })
-
+  const navigate = useNavigate()
   const handleChange = e =>{
       setInputs(prev=>({...prev,[e.target.name]:e.target.value}))
   }
@@ -29,7 +29,7 @@ const Register = () => {
         return
       }
       const res = await axios.post("http://localhost:8800/api/auth/register",inputs)
-      Navigate("/login")
+      navigate("/login")
     console.log(res)
     }
     catch(err){

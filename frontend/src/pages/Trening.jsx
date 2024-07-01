@@ -19,17 +19,17 @@ const Trening = () => {
     const [ime_trenera,setTre] = useState("");
     const [opis_treninga,setOpi] = useState("");
     useEffect(() => {
-      const fetchTreninzi = async () => {
-        try {
-          const res = await axios.get('http://localhost:8800/api/termini/trening');
-          setTr(res.data);
-        } catch (err) {
-          console.error(err);
-        }
-      };
+     
       fetchTreninzi();
     }, []);
-  
+    const fetchTreninzi = async () => {
+      try {
+        const res = await axios.get('http://localhost:8800/api/termini/trening');
+        setTr(res.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
    
   
   
@@ -40,7 +40,7 @@ const Trening = () => {
         
         await axios.post('http://localhost:8800/api/termini/dodaj/trening', { ime_treninga, ime_trenera,opis_treninga });
         console.log('Trening uspješno dodat');
-        window.location.reload()
+        await fetchTreninzi()
         
       } catch (err) {
         console.error(err);
@@ -58,10 +58,10 @@ const Trening = () => {
       }).then(async (result) => {  // Mark the function as async here
         if (result.isConfirmed) {
           try {
-            await axios.delete(`http://localhost:8800/api/termini/deltrening/${id_treninga}`);
-            setTr(tr.filter(tr => tr.id_treninga !== id_treninga));
+            await axios.put(`http://localhost:8800/api/termini/del/trening/${id_treninga}`);
+            await fetchTreninzi()
             console.log('Termin uspješno izbrisan');
-    
+     
             Swal.fire({
               title: "Izbrisano!",
               text: "Termin je uspjesno izbrisan.",
@@ -79,7 +79,7 @@ const Trening = () => {
         <h1 className='naslov'>Svi treninzi</h1>
         {currentUser.id === 4 && (
           <div>
-            <form onSubmit={handleSubmit}>
+            <form className="formaTr" onSubmit={handleSubmit}>
               <label>
                 Ime treninga:
                 <input

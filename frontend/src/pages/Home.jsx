@@ -46,8 +46,10 @@ const Home = () => {
 
   return (
     <div className="cont">
+      <div className="nasl">
       <h1>Dobrodosli na Forestino Gym!</h1>
       <h3>Budite u toku sa najnovijim blogovima!</h3>
+      </div>
       <div className="blokovi">
         {currentPosts.map((post) => (
           <div className="blok" key={post.id_bloga}>
@@ -58,8 +60,8 @@ const Home = () => {
               <div className="tekst">
               <h2>{post.naslov}</h2>
               <p>{truncateText(post.opis, 25)}</p>
-              
               </div>
+              
               <div className="dugme">
               <p>{formattedDate(post.date)}</p>
               <Link to={`/posts/${post.id_bloga}`}>

@@ -36,7 +36,7 @@ const AdminBlog = () => {
       e.preventDefault();
       const imgUrl = await upload()
       try{
-        state ? await axios.put(`http://localhost:8800/api/posts/edit/${state.id_bloga}`,
+          state ? await axios.put(`http://localhost:8800/api/posts/edit/${state.id_bloga}`,
           {title,dec,text,date:moment(Date.now()).format("YYYY-MM-DD"),img: file ? imgUrl : ""}
         )
         : await axios.post(`http://localhost:8800/api/posts/dodaj`,

@@ -1,3 +1,7 @@
+
+@media (width>=650px) {
+    
+
 .sadrzaj{
     width: 100vw;
     min-height: 100vh;
@@ -19,3 +23,67 @@
     color: #4e44d0;
     transition: all 0.3s;
 }
+.korisnici{
+    margin-bottom: 100px;
+}
+.forme{
+    display: flex;
+    flex-direction: row;
+}
+}
+
+@media (width<650px) {
+    .zakazi{
+        font-size: 13px;
+    }
+
+    .sadrzaj {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: top;
+      }
+      
+      .addNew {
+        padding: 9px 11px;
+        background-color: #4e44d0;
+        color: white;
+        border-radius: 10px;
+        border: 1px solid transparent;
+      }
+      
+      .addNew:hover {
+        background-color: white;
+        border: 1px solid #4e44d0;
+        color: #4e44d0;
+        transition: all 0.3s;
+      }
+      
+      .forme {
+        display: flex;
+        flex-direction: column;
+      }
+      .input{
+        padding: 3px 2px;
+      }
+      .table-container {
+        width: 100%;
+        overflow-x: auto; /* Omogućuje horizontalno skrolovanje */
+        margin-bottom: 100px; /* Osigurava da tabela ne bude preblizu rubovima */
+      }
+      
+      .korisnici {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+      }
+      
+      .korisnici th, .korisnici td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+      
+    }

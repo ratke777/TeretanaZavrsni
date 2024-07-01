@@ -28,19 +28,25 @@ const Navbar = ({ showNav }) => {
         <li>
           <a href="/"><CiHome/>Pocetna</a>
         </li>
+        {currentUser && currentUser.id !== 4 && (
         <li>
+
           <a href="/user"><CiUser/>Podaci o korisniku</a>
         </li>
+        )}
+        {currentUser && currentUser.id !== 4 && (
         <li>
           <a href="/rezervacije"><IoIosCheckboxOutline/>Rezervacije</a>
         </li>
+        )}
         <li>
           <a href="/termini"><CiViewTable/>Termini</a>
         </li>
+        {currentUser && currentUser.id !== 4 && (
         <li>
           <a href="/kontakt"><GrContact/>Kontakt </a>
         </li>
-        
+        )}
        
         {currentUser && currentUser.id === 4 && (
             <li>
